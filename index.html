@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Social Butterfly — Digital Marketing That Actually Works</title>
+  <meta name="description" content="Bold, intentional marketing that connects with your audience and moves the needle. Social media management, content creation, web design & paid ads." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --brown:       #4a3020;
+      --brown-mid:   #6b4c35;
+      --brown-light: #8f6a4e;
+      --gold:        #c49a3c;
+      --gold-light:  #e2bb6a;
+      --cream:       #faf7f2;
+      --cream-dark:  #f0e8db;
+      --cream-deep:  #e5d8c8;
+      --text:        #1e130a;
+      --text-mid:    #4a3828;
+      --text-muted:  #7a6355;
+      --white:       #ffffff;
+      --radius:      12px;
+      --radius-lg:   20px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ─── NAVBAR ─────────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(250,247,242,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--cream-deep);
+      padding: 0 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: 1.25rem;
+      color: var(--brown);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+    .nav-logo span { color: var(--gold); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-mid);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--brown); }
+
+    .nav-cta {
+      background: var(--brown);
+      color: var(--white) !important;
+      padding: 0.55rem 1.4rem;
+      border-radius: 100px;
+      font-weight: 600;
+      transition: background 0.2s, transform 0.15s !important;
+    }
+    .nav-cta:hover { background: var(--brown-mid) !important; transform: translateY(-1px); }
+
+    /* ─── HERO ──────────────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 100px 5% 60px;
+      background:
+        radial-gradient(ellipse 70% 60% at 80% 40%, rgba(196,154,60,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 20% 70%, rgba(74,48,32,0.07) 0%, transparent 60%),
+        var(--cream);
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(196,154,60,0.1);
+      border: 1px solid rgba(196,154,60,0.25);
+      padding: 0.35rem 1rem;
+      border-radius: 100px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.6rem, 5vw, 4.2rem);
+      font-weight: 900;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      color: var(--brown);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero p {
+      font-size: 1.125rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+      max-width: 500px;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--brown);
+      color: var(--white);
+      padding: 0.9rem 2rem;
+      border-radius: 100px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 4px 20px rgba(74,48,32,0.2);
+    }
+    .btn-primary:hover {
+      background: var(--brown-mid);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(74,48,32,0.25);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--brown);
+      padding: 0.9rem 2rem;
+      border-radius: 100px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      border: 1.5px solid var(--brown);
+      transition: all 0.2s;
+    }
+    .btn-ghost:hover {
+      background: var(--brown);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .hero-stat-row {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--cream-deep);
+    }
+
+    .hero-stat h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--brown);
+      line-height: 1;
+    }
+    .hero-stat p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin: 0.25rem 0 0;
+    }
+
+    /* Hero visual */
+    .hero-visual {
+      position: relative;
+    }
+
+    .hero-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: 0 20px 60px rgba(74,48,32,0.12);
+      position: relative;
+    }
+
+    .hero-card-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .service-list-preview {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .service-list-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 1.1rem;
+      background: var(--cream);
+      border-radius: var(--radius);
+      border: 1px solid var(--cream-deep);
+      transition: border-color 0.2s;
+    }
+    .service-list-item:hover { border-color: var(--gold-light); }
+
+    .service-list-item-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .service-icon {
+      width: 36px;
+      height: 36px;
+      background: rgba(196,154,60,0.12);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+
+    .service-list-item strong {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .service-list-item .pill {
+      font-size: 0.7rem;
+      font-weight: 700;
+      background: rgba(74,48,32,0.08);
+      color: var(--brown-mid);
+      padding: 0.25rem 0.7rem;
+      border-radius: 100px;
+    }
+
+    .hero-card-badge {
+      position: absolute;
+      top: -16px;
+      right: 24px;
+      background: var(--gold);
+      color: var(--white);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.4rem 1rem;
+      border-radius: 100px;
+      white-space: nowrap;
+      box-shadow: 0 4px 12px rgba(196,154,60,0.35);
+    }
+
+    /* ─── TRUST BAR ─────────────────────────────────────────── */
+    .trust-bar {
+      background: var(--brown);
+      padding: 1.5rem 5%;
+      overflow: hidden;
+    }
+
+    .trust-bar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .trust-bar-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      white-space: nowrap;
+      padding-right: 2rem;
+      border-right: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .trust-logos {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .trust-type {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.7);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      white-space: nowrap;
+      transition: color 0.2s;
+    }
+    .trust-type:hover { color: var(--gold-light); }
+    .trust-type span.dot { width: 5px; height: 5px; background: var(--gold); border-radius: 50%; display: inline-block; }
+
+    /* ─── SECTION BASE ──────────────────────────────────────── */
+    section { padding: 6rem 5%; }
+
+    .section-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 900;
+      color: var(--brown);
+      line-height: 1.15;
+      letter-spacing: -0.015em;
+      margin-bottom: 1rem;
+    }
+    .section-title em { font-style: italic; color: var(--gold); }
+
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+      max-width: 560px;
+    }
+
+    .section-header { margin-bottom: 3.5rem; }
+    .section-header.center { text-align: center; }
+    .section-header.center .section-sub { margin: 0 auto; }
+
+    .container { max-width: 1200px; margin: 0 auto; }
+
+    /* ─── SERVICES ──────────────────────────────────────────── */
+    .services { background: var(--cream); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      border: 1px solid var(--cream-deep);
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(74,48,32,0.1);
+      border-color: var(--gold-light);
+    }
+    .service-card.featured {
+      background: var(--brown);
+      border-color: var(--brown);
+      grid-column: span 2;
+    }
+
+    .service-card-icon {
+      width: 52px;
+      height: 52px;
+      background: rgba(196,154,60,0.1);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+    .service-card.featured .service-card-icon {
+      background: rgba(255,255,255,0.15);
+    }
+
+    .service-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--brown);
+    }
+    .service-card.featured h3 { color: var(--white); }
+
+    .service-card .price {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--gold);
+      background: rgba(196,154,60,0.12);
+      padding: 0.3rem 0.8rem;
+      border-radius: 100px;
+      display: inline-block;
+    }
+    .service-card.featured .price {
+      color: var(--gold-light);
+      background: rgba(255,255,255,0.12);
+    }
+
+    .service-card p {
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .service-card.featured p { color: rgba(255,255,255,0.8); }
+
+    .service-tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    .service-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.3rem 0.7rem;
+      border-radius: 100px;
+      background: var(--cream);
+      color: var(--text-mid);
+      border: 1px solid var(--cream-deep);
+    }
+    .service-card.featured .service-tag {
+      background: rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.75);
+      border-color: rgba(255,255,255,0.15);
+    }
+
+    .service-card-link {
+      margin-top: auto;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--brown);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: gap 0.2s, color 0.2s;
+    }
+    .service-card-link:hover { gap: 0.6rem; color: var(--gold); }
+    .service-card.featured .service-card-link { color: var(--gold-light); }
+    .service-card.featured .service-card-link:hover { color: var(--white); }
+
+    /* ─── BLUEPRINT CALLOUT ─────────────────────────────────── */
+    .blueprint {
+      background: var(--cream-dark);
+    }
+
+    .blueprint-inner {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 4rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      border: 1px solid var(--cream-deep);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .blueprint-inner::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(196,154,60,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .blueprint-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(196,154,60,0.12);
+      border: 1px solid rgba(196,154,60,0.3);
+      color: var(--gold);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.35rem 1rem;
+      border-radius: 100px;
+      margin-bottom: 1.5rem;
+    }
+
+    .blueprint h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 900;
+      color: var(--brown);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .blueprint p {
+      font-size: 1rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .blueprint-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--brown);
+    }
+    .blueprint-price span {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    .blueprint-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-top: 0.5rem;
+    }
+
+    .blueprint-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      color: var(--text-mid);
+    }
+
+    .blueprint-feature-check {
+      width: 20px;
+      height: 20px;
+      background: rgba(196,154,60,0.12);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+      font-size: 0.65rem;
+      color: var(--gold);
+    }
+
+    /* ─── PROCESS ───────────────────────────────────────────── */
+    .process { background: var(--cream); }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      position: relative;
+    }
+
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: 10%;
+      right: 10%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+    }
+
+    .process-step {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--cream-deep);
+      position: relative;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .process-step:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 36px rgba(74,48,32,0.08);
+    }
+
+    .process-step-num {
+      width: 48px;
+      height: 48px;
+      background: var(--brown);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 1rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.25rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .process-step h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--brown);
+      margin-bottom: 0.6rem;
+    }
+
+    .process-step p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* ─── TEAM ──────────────────────────────────────────────── */
+    .team { background: var(--cream-dark); }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .team-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      border: 1px solid var(--cream-deep);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .team-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(74,48,32,0.1);
+    }
+
+    .team-card-header {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--cream-deep);
+    }
+
+    .team-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--cream-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      flex-shrink: 0;
+      border: 3px solid var(--cream-deep);
+    }
+
+    .team-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--brown);
+    }
+    .team-info .role {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 0.2rem;
+    }
+    .team-info .school {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.15rem;
+    }
+
+    .team-bio {
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+
+    .team-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.25rem;
+    }
+    .team-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.3rem 0.75rem;
+      border-radius: 100px;
+      background: var(--cream);
+      color: var(--text-mid);
+      border: 1px solid var(--cream-deep);
+    }
+
+    /* ─── APPLY SECTION ─────────────────────────────────────── */
+    .apply {
+      background: var(--brown);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .apply::before {
+      content: '';
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(196,154,60,0.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .apply::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -80px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .apply-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .apply-left .section-eyebrow { color: var(--gold-light); }
+    .apply-left .section-title { color: var(--white); }
+    .apply-left .section-sub { color: rgba(255,255,255,0.7); max-width: 100%; }
+
+    .apply-points {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .apply-point {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.925rem;
+      color: rgba(255,255,255,0.8);
+    }
+    .apply-point-icon {
+      width: 22px;
+      height: 22px;
+      background: rgba(196,154,60,0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 0.6rem;
+      color: var(--gold-light);
+      margin-top: 1px;
+    }
+
+    /* Form */
+    .apply-form {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+    }
+
+    .apply-form h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--brown);
+      margin-bottom: 0.5rem;
+    }
+
+    .apply-form .form-sub {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .form-field.full { grid-column: 1 / -1; }
+
+    .form-field label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-mid);
+    }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: var(--text);
+      background: var(--cream);
+      border: 1.5px solid var(--cream-deep);
+      border-radius: var(--radius);
+      padding: 0.75rem 1rem;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      width: 100%;
+    }
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(196,154,60,0.12);
+    }
+    .form-field textarea { min-height: 100px; resize: vertical; }
+
+    .form-submit {
+      width: 100%;
+      background: var(--brown);
+      color: var(--white);
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 100px;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      margin-top: 0.5rem;
+    }
+    .form-submit:hover {
+      background: var(--brown-mid);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(74,48,32,0.3);
+    }
+
+    .form-note {
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.75rem;
+    }
+
+    /* ─── FOOTER ────────────────────────────────────────────── */
+    footer {
+      background: var(--text);
+      color: rgba(255,255,255,0.7);
+      padding: 3rem 5%;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+    .footer-logo span { color: var(--gold); }
+
+    .footer-tagline {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--gold-light); }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 2rem auto 0;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.35);
+      text-align: center;
+    }
+
+    /* ─── MOBILE ────────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .hero-inner,
+      .blueprint-inner,
+      .apply-inner,
+      .team-grid,
+      .footer-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+
+      .service-card.featured { grid-column: span 1; }
+      .process-steps { grid-template-columns: 1fr 1fr; }
+      .process-steps::before { display: none; }
+
+      .hero { padding: 100px 5% 50px; }
+      .blueprint-inner { padding: 2.5rem; }
+
+      .footer-links { justify-content: flex-start; }
+      .nav-links { display: none; }
+      .apply-inner { gap: 2.5rem; }
+    }
+
+    @media (max-width: 560px) {
+      .process-steps { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .hero-stat-row { gap: 1.5rem; flex-wrap: wrap; }
+      .hero-actions { flex-direction: column; }
+      .hero-actions a { width: 100%; text-align: center; justify-content: center; }
+    }
+
+    /* ─── ANIMATIONS ────────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up { opacity: 0; animation: fadeUp 0.6s ease forwards; }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.22s; }
+    .delay-3 { animation-delay: 0.34s; }
+    .delay-4 { animation-delay: 0.46s; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="#">The Social <span>Butterfly</span></a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#blueprint">Blueprint</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#apply" class="nav-cta">Apply Now →</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner container">
+      <div>
+        <div class="hero-eyebrow fade-up">🦋 College Station, TX · Dallas · Round Top & Beyond</div>
+        <h1 class="fade-up delay-1">Marketing that<br><em>actually works.</em></h1>
+        <p class="fade-up delay-2">Bold, intentional digital marketing that connects with your audience and moves the needle. If you're ready for something different, creative, and impactful — welcome.</p>
+        <div class="hero-actions fade-up delay-3">
+          <a href="#apply" class="btn-primary">Apply to Work With Us →</a>
+          <a href="#services" class="btn-ghost">See Services</a>
+        </div>
+        <div class="hero-stat-row fade-up delay-4">
+          <div class="hero-stat">
+            <h3>5+</h3>
+            <p>Services offered</p>
+          </div>
+          <div class="hero-stat">
+            <h3>24hr</h3>
+            <p>Response guarantee</p>
+          </div>
+          <div class="hero-stat">
+            <h3>100%</h3>
+            <p>Custom strategy</p>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual fade-up delay-2">
+        <div class="hero-card">
+          <div class="hero-card-badge">✦ Most Popular</div>
+          <div class="hero-card-label">What We Handle For You</div>
+          <div class="service-list-preview">
+            <div class="service-list-item">
+              <div class="service-list-item-left">
+                <div class="service-icon">📱</div>
+                <strong>Social Media Management</strong>
+              </div>
+              <span class="pill">from $1,650/mo</span>
+            </div>
+            <div class="service-list-item">
+              <div class="service-list-item-left">
+                <div class="service-icon">📸</div>
+                <strong>Brand Photography</strong>
+              </div>
+              <span class="pill">Custom</span>
+            </div>
+            <div class="service-list-item">
+              <div class="service-list-item-left">
+                <div class="service-icon">🌐</div>
+                <strong>Web Design</strong>
+              </div>
+              <span class="pill">from $2,000</span>
+            </div>
+            <div class="service-list-item">
+              <div class="service-list-item-left">
+                <div class="service-icon">📣</div>
+                <strong>Paid Ads</strong>
+              </div>
+              <span class="pill">from $600</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-bar-inner">
+      <span class="trust-bar-label">Brands We Serve</span>
+      <div class="trust-logos">
+        <span class="trust-type"><span class="dot"></span> Boutiques &amp; Retail</span>
+        <span class="trust-type"><span class="dot"></span> Restaurants &amp; Food</span>
+        <span class="trust-type"><span class="dot"></span> Real Estate</span>
+        <span class="trust-type"><span class="dot"></span> Beauty &amp; Wellness</span>
+        <span class="trust-type"><span class="dot"></span> Fitness &amp; Health</span>
+        <span class="trust-type"><span class="dot"></span> Service Businesses</span>
+        <span class="trust-type"><span class="dot"></span> E-Commerce</span>
+        <span class="trust-type"><span class="dot"></span> Local &amp; National</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">What We Do</div>
+        <h2 class="section-title">Great design catches eyes.<br><em>Great strategy keeps them.</em></h2>
+        <p class="section-sub">Your brand deserves more than pretty posts. Every service we offer is built to attract the right people, boost your visibility, and actually grow your business.</p>
+      </div>
+      <div class="services-grid">
+        <!-- Social Media Management (featured) -->
+        <div class="service-card featured">
+          <div class="service-card-icon">📱</div>
+          <div>
+            <span class="price">from $1,650 / month</span>
+          </div>
+          <h3>Social Media Management</h3>
+          <p>The service everyone loves — and our most popular — because it gets attention, makes your brand stick, and leaves your audience wanting more. Full-scope management: strategy, content creation, copywriting, scheduling, engagement, and analytics. We handle it all so your socials don't just look good — they work.</p>
+          <div class="service-tag-list">
+            <span class="service-tag">Instagram</span>
+            <span class="service-tag">Facebook</span>
+            <span class="service-tag">TikTok</span>
+            <span class="service-tag">Pinterest</span>
+            <span class="service-tag">Reels</span>
+            <span class="service-tag">Stories</span>
+          </div>
+          <a class="service-card-link" href="#apply">Get started →</a>
+        </div>
+
+        <!-- Content Creation -->
+        <div class="service-card">
+          <div class="service-card-icon">📸</div>
+          <div><span class="price">Contact for Pricing</span></div>
+          <h3>Content Creation &amp; Brand Photography</h3>
+          <p>Good marketing starts with good content. We handle photos, videos, creative direction, and graphics — from idea to finished post. One-time shoots or monthly packages. Your socials will never get boring.</p>
+          <div class="service-tag-list">
+            <span class="service-tag">Shot List</span>
+            <span class="service-tag">Edited Gallery</span>
+            <span class="service-tag">On-Location</span>
+            <span class="service-tag">iPhone Videography</span>
+            <span class="service-tag">Reels &amp; TikToks</span>
+          </div>
+          <a class="service-card-link" href="#apply">Learn more →</a>
+        </div>
+
+        <!-- Web Design -->
+        <div class="service-card">
+          <div class="service-card-icon">🌐</div>
+          <div><span class="price">from $2,000</span></div>
+          <h3>Web Design</h3>
+          <p>Every brand needs a landing spot that tells your story, sells your offer, and makes it easy for people to take action. We build clean, strategic, on-brand sites that not only look good but actually work.</p>
+          <div class="service-tag-list">
+            <span class="service-tag">Design &amp; Layout</span>
+            <span class="service-tag">Copywriting</span>
+            <span class="service-tag">Mobile Optimized</span>
+            <span class="service-tag">Basic SEO</span>
+            <span class="service-tag">Launch Support</span>
+          </div>
+          <a class="service-card-link" href="#apply">Learn more →</a>
+        </div>
+
+        <!-- Paid Ads -->
+        <div class="service-card">
+          <div class="service-card-icon">📣</div>
+          <div><span class="price">from $600</span></div>
+          <h3>Paid Ads</h3>
+          <p>Your ads should do more than run — they should perform. We cover the full process, from creative to optimization, so your budget isn't just being spent, it's working.</p>
+          <div class="service-tag-list">
+            <span class="service-tag">Ad Strategy</span>
+            <span class="service-tag">Creative Design</span>
+            <span class="service-tag">Campaign Setup</span>
+            <span class="service-tag">Landing Page</span>
+            <span class="service-tag">Optimization</span>
+            <span class="service-tag">Reporting</span>
+          </div>
+          <a class="service-card-link" href="#apply">Learn more →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLUEPRINT -->
+  <section class="blueprint" id="blueprint">
+    <div class="container">
+      <div class="blueprint-inner">
+        <div>
+          <div class="blueprint-badge">✦ Signature Offer</div>
+          <h2>The Social Media<br>Management Blueprint</h2>
+          <p>For brands that can handle their own socials but have mostly been guessing and hoping for the best. I'm handing you the full blueprint — a completely custom, 40+ page strategy built around your brand.</p>
+          <div class="blueprint-price">$3,200 <span>· one-time investment</span></div>
+          <a href="#apply" class="btn-primary" style="margin-top:1.75rem; display:inline-flex;">Apply for Blueprint →</a>
+        </div>
+        <ul class="blueprint-features">
+          <li class="blueprint-feature">
+            <span class="blueprint-feature-check">✓</span>
+            40+ page fully customized social media strategy
+          </li>
+          <li class="blueprint-feature">
+            <span class="blueprint-feature-check">✓</span>
+            Brand identity, tone of voice &amp; competitor analysis
+          </li>
+          <li class="blueprint-feature">
+            <span class="blueprint-feature-check">✓</span>
+            Visual feed styling that reflects your brand
+          </li>
+          <li class="blueprint-feature">
+            <span class="blueprint-feature-check">✓</span>
+            10 professionally designed feed post templates
+          </li>
+          <li class="blueprint-feature">
+            <span class="blueprint-feature-check">✓</span>
+            10 matching branded story post templates
+          </li>
+          <li class="blueprint-feature">
+            <span class="blueprint-feature-check">✓</span>
+            30 days of tailored content ideas for your feed
+          </li>
+          <li class="blueprint-feature">
+            <span class="blueprint-feature-check">✓</span>
+            15 days of creative story prompts
+          </li>
+          <li class="blueprint-feature">
+            <span class="blueprint-feature-check">✓</span>
+            Analytics guide + community engagement plan
+          </li>
+          <li class="blueprint-feature">
+            <span class="blueprint-feature-check">✓</span>
+            One month of 1:1 direct support with Maddie
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process" id="process">
+    <div class="container">
+      <div class="section-header center">
+        <div class="section-eyebrow">How It Works</div>
+        <h2 class="section-title">Simple to start.<br><em>Powerful to scale.</em></h2>
+        <p class="section-sub">We made getting started as easy as possible. From first contact to a custom proposal — here's exactly what to expect.</p>
+      </div>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="process-step-num">1</div>
+          <h3>Browse Services</h3>
+          <p>Scroll through and see what feels like a fit for where your brand is right now.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">2</div>
+          <h3>Fill Out the Form</h3>
+          <p>Head to the Apply page and fill out the short application. We can't wait to meet you.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">3</div>
+          <h3>We're In Touch</h3>
+          <p>We'll be back within 24 hours — usually sooner. A discovery call comes next.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">4</div>
+          <h3>Custom Proposal</h3>
+          <p>You'll receive a clear proposal with exact pricing and exactly what we'd handle for you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="team" id="team">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">The Team</div>
+        <h2 class="section-title">We don't blend in.<br><em>And neither do our results.</em></h2>
+        <p class="section-sub">A small but mighty team that treats your business like our own. Every piece of content created with purpose.</p>
+      </div>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-card-header">
+            <div class="team-avatar">🦋</div>
+            <div class="team-info">
+              <h3>Maddie</h3>
+              <div class="role">Founder &amp; Creative Director</div>
+              <div class="school">Texas A&M · Communication &amp; Digital Marketing</div>
+            </div>
+          </div>
+          <p class="team-bio">The Social Butterfly didn't start with a big beautiful plan — it started on a phone call with her dad, driving to one of her last classes at Texas A&M. She took everything she loves — content creation, design, branding, and storytelling — and built a business around it. Now she helps other people grow their brands online with confidence and clarity.<br><br>Type-A creative who thrives on a good plan and a clean layout. Driven by faith, family, and a genuine desire to see her clients win. If it doesn't make you money, it's not worth doing.</p>
+          <div class="team-tags">
+            <span class="team-tag">Strategy</span>
+            <span class="team-tag">Brand Direction</span>
+            <span class="team-tag">Content Creation</span>
+            <span class="team-tag">Copywriting</span>
+            <span class="team-tag">Faith-Driven</span>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-card-header">
+            <div class="team-avatar">✨</div>
+            <div class="team-info">
+              <h3>Kaylee</h3>
+              <div class="role">Social Media Manager</div>
+              <div class="school">Texas A&M · Communication + Social Media Minor</div>
+            </div>
+          </div>
+          <p class="team-bio">TSB's first official hire and the engine behind our clients' day-to-day social presence. Three years of experience, a degree in Communication with a Social Media minor, and a creative eye that shows up in everything she touches — from content creation to branding and design.<br><br>Born and raised in Dallas, TX. Classic Type A who thrives on structure but knows how to keep things fun. From content planning to caption writing, she keeps clients polished, consistent, and growing.</p>
+          <div class="team-tags">
+            <span class="team-tag">Social Media</span>
+            <span class="team-tag">Content Planning</span>
+            <span class="team-tag">Caption Writing</span>
+            <span class="team-tag">Branding</span>
+            <span class="team-tag">Design</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLY -->
+  <section class="apply" id="apply">
+    <div class="container">
+      <div class="apply-inner">
+        <div class="apply-left">
+          <div class="section-eyebrow">Apply Now</div>
+          <h2 class="section-title" style="color:white;">Ready to stop<br><em>blending in?</em></h2>
+          <p class="section-sub">Tell us about your brand and what you're looking for. We'll review your application and reach out within 24 hours to set up a free discovery call.</p>
+          <ul class="apply-points">
+            <li class="apply-point">
+              <span class="apply-point-icon">✓</span>
+              No pressure, no obligation — just a conversation
+            </li>
+            <li class="apply-point">
+              <span class="apply-point-icon">✓</span>
+              Custom proposal with transparent pricing
+            </li>
+            <li class="apply-point">
+              <span class="apply-point-icon">✓</span>
+              We only take on clients we know we can truly help
+            </li>
+            <li class="apply-point">
+              <span class="apply-point-icon">✓</span>
+              Response within 24 hours — usually much sooner
+            </li>
+          </ul>
+        </div>
+        <div class="apply-form">
+          <h3>Let's Work Together</h3>
+          <p class="form-sub">Fill out the short form below and we'll be in touch soon. We can't wait to meet you!</p>
+          <form id="applyForm" onsubmit="handleSubmit(event)">
+            <div class="form-row">
+              <div class="form-field">
+                <label for="firstName">First Name *</label>
+                <input type="text" id="firstName" placeholder="Jane" required />
+              </div>
+              <div class="form-field">
+                <label for="lastName">Last Name *</label>
+                <input type="text" id="lastName" placeholder="Smith" required />
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" placeholder="jane@yourbrand.com" required />
+            </div>
+            <div class="form-field">
+              <label for="business">Business Name *</label>
+              <input type="text" id="business" placeholder="Your Brand Name" required />
+            </div>
+            <div class="form-field">
+              <label for="instagram">Instagram Handle</label>
+              <input type="text" id="instagram" placeholder="@yourbrand" />
+            </div>
+            <div class="form-field">
+              <label for="service">What are you interested in? *</label>
+              <select id="service" required>
+                <option value="" disabled selected>Select a service</option>
+                <option value="smm">Social Media Management</option>
+                <option value="content">Content Creation &amp; Brand Photography</option>
+                <option value="web">Web Design</option>
+                <option value="ads">Paid Ads</option>
+                <option value="blueprint">SMM Blueprint</option>
+                <option value="multiple">Multiple Services</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="message">Tell us about your brand &amp; goals</label>
+              <textarea id="message" placeholder="What does your brand do? What are you hoping to achieve? Any challenges you're facing?"></textarea>
+            </div>
+            <button type="submit" class="form-submit">Send My Application →</button>
+            <p class="form-note">By submitting, you agree to be contacted by The Social Butterfly team. We respect your privacy.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">The Social <span>Butterfly</span></div>
+        <p class="footer-tagline">Custom Digital Marketing That Actually Works · College Station, TX</p>
+      </div>
+      <nav class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#blueprint">Blueprint</a>
+        <a href="#team">Team</a>
+        <a href="#apply">Apply</a>
+        <a href="https://www.instagram.com/tsb.marketing/" target="_blank">Instagram</a>
+        <a href="https://www.facebook.com/profile.php?id=61578894704157" target="_blank">Facebook</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      © 2025 TSB Social Media Agency LLC · The Social Butterfly · All rights reserved
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Form submission — connects to her existing Hire Us page / Google Form
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('.form-submit');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+
+      // Collect form data
+      const data = {
+        firstName: document.getElementById('firstName').value,
+        lastName: document.getElementById('lastName').value,
+        email: document.getElementById('email').value,
+        business: document.getElementById('business').value,
+        instagram: document.getElementById('instagram').value,
+        service: document.getElementById('service').value,
+        message: document.getElementById('message').value,
+      };
+
+      // TODO: Replace this URL with her Google Form action URL or backend endpoint
+      // For now, redirect to her existing contact page after a brief delay
+      setTimeout(() => {
+        btn.textContent = "Application Sent! ✓";
+        btn.style.background = '#2d6a4f';
+        // Optionally redirect: window.location.href = 'https://socialbutterflytx.com/contact-1';
+      }, 1200);
+    }
+
+    // Intersection Observer for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.service-card, .process-step, .team-card, .blueprint-inner').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
