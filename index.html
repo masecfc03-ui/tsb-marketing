@@ -383,6 +383,138 @@
 
     .container { max-width: 1200px; margin: 0 auto; }
 
+    /* ─── CLIENTS ──────────────────────────────────────────── */
+    .clients { background: var(--cream-dark); }
+
+    .clients-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .client-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--cream-deep);
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .client-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(74,48,32,0.1);
+    }
+
+    .client-card-header {
+      background: var(--cream);
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      border-bottom: 1px solid var(--cream-deep);
+    }
+
+    .client-logo-circle {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--brown);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 1.1rem;
+      font-family: 'Playfair Display', serif;
+      flex-shrink: 0;
+    }
+
+    .client-header-info h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--brown);
+      line-height: 1.2;
+    }
+    .client-header-info .client-type {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+      font-style: italic;
+    }
+
+    .client-card-body {
+      padding: 1.5rem;
+    }
+
+    .client-desc {
+      font-size: 0.875rem;
+      color: var(--text-mid);
+      line-height: 1.65;
+      margin-bottom: 1.25rem;
+    }
+
+    .client-results {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .client-result-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.6rem 0.85rem;
+      background: var(--cream);
+      border-radius: 8px;
+      border: 1px solid var(--cream-deep);
+    }
+
+    .client-result-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .client-result-value {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--brown);
+    }
+    .client-result-value.up {
+      color: #2d6a4f;
+    }
+    .client-result-value.up::before { content: '↑ '; }
+
+    .client-card-footer {
+      padding: 1rem 1.5rem;
+      border-top: 1px solid var(--cream-deep);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .client-ig {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .client-ig:hover { color: var(--gold); }
+
+    .client-follower-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      background: rgba(196,154,60,0.1);
+      color: var(--gold);
+      padding: 0.25rem 0.7rem;
+      border-radius: 100px;
+      border: 1px solid rgba(196,154,60,0.2);
+    }
+
+    @media (max-width: 900px) {
+      .clients-grid { grid-template-columns: 1fr; }
+    }
+
     /* ─── SERVICES ──────────────────────────────────────────── */
     .services { background: var(--cream); }
 
@@ -1077,19 +1209,125 @@
   <!-- TRUST BAR -->
   <div class="trust-bar">
     <div class="trust-bar-inner">
-      <span class="trust-bar-label">Brands We Serve</span>
+      <span class="trust-bar-label">Trusted By</span>
       <div class="trust-logos">
-        <span class="trust-type"><span class="dot"></span> Boutiques &amp; Retail</span>
-        <span class="trust-type"><span class="dot"></span> Restaurants &amp; Food</span>
-        <span class="trust-type"><span class="dot"></span> Real Estate</span>
-        <span class="trust-type"><span class="dot"></span> Beauty &amp; Wellness</span>
-        <span class="trust-type"><span class="dot"></span> Fitness &amp; Health</span>
-        <span class="trust-type"><span class="dot"></span> Service Businesses</span>
-        <span class="trust-type"><span class="dot"></span> E-Commerce</span>
-        <span class="trust-type"><span class="dot"></span> Local &amp; National</span>
+        <span class="trust-type"><span class="dot"></span> Hunter Custom Homes</span>
+        <span class="trust-type"><span class="dot"></span> HOSTIE Vacation Rentals</span>
+        <span class="trust-type"><span class="dot"></span> Townsend Round Top</span>
+        <span class="trust-type"><span class="dot"></span> &amp; many more</span>
       </div>
     </div>
   </div>
+
+  <!-- CLIENTS -->
+  <section class="clients" id="clients">
+    <div class="container">
+      <div class="section-header center">
+        <div class="section-eyebrow">Real Results</div>
+        <h2 class="section-title">A few of our<br><em>amazing clients.</em></h2>
+        <p class="section-sub">We don't just manage posts — we grow brands. Here's what we've built for real businesses in Texas.</p>
+      </div>
+      <div class="clients-grid">
+
+        <!-- Hunter Custom Homes -->
+        <div class="client-card">
+          <div class="client-card-header">
+            <div class="client-logo-circle">H</div>
+            <div class="client-header-info">
+              <h4>Hunter Custom Homes</h4>
+              <div class="client-type">Luxury Custom Home Builder · South Texas</div>
+            </div>
+          </div>
+          <div class="client-card-body">
+            <p class="client-desc">Award-winning South Texas luxury custom home builder focused on crafting custom homes across the region. We manage their full Instagram presence — turning dream homes into scroll-stopping content.</p>
+            <div class="client-results">
+              <div class="client-result-row">
+                <span class="client-result-label">Monthly Views</span>
+                <span class="client-result-value up">46,600</span>
+              </div>
+              <div class="client-result-row">
+                <span class="client-result-label">Interactions / mo</span>
+                <span class="client-result-value up">3,100</span>
+              </div>
+              <div class="client-result-row">
+                <span class="client-result-label">New Followers / mo</span>
+                <span class="client-result-value up">276</span>
+              </div>
+            </div>
+          </div>
+          <div class="client-card-footer">
+            <a href="https://www.instagram.com/huntercustomhomestx/" target="_blank" class="client-ig">@huntercustomhomestx</a>
+            <span class="client-follower-badge">17.7K followers</span>
+          </div>
+        </div>
+
+        <!-- HOSTIE -->
+        <div class="client-card">
+          <div class="client-card-header">
+            <div class="client-logo-circle" style="background:var(--gold-light); color:var(--brown);">H</div>
+            <div class="client-header-info">
+              <h4>HOSTIE Vacation Rentals</h4>
+              <div class="client-type">Boutique STR Management · Round Top &amp; Beyond</div>
+            </div>
+          </div>
+          <div class="client-card-body">
+            <p class="client-desc">Boutique short-term rental company with luxury vacation homes across Round Top, La Grange, Burton, Fayetteville, Chappell Hill, Brenham &amp; Wimberley, Texas. We put them on the map.</p>
+            <div class="client-results">
+              <div class="client-result-row">
+                <span class="client-result-label">Monthly Views</span>
+                <span class="client-result-value up">40,200</span>
+              </div>
+              <div class="client-result-row">
+                <span class="client-result-label">Interactions / mo</span>
+                <span class="client-result-value up">1,200</span>
+              </div>
+              <div class="client-result-row">
+                <span class="client-result-label">New Followers / mo</span>
+                <span class="client-result-value up">173</span>
+              </div>
+            </div>
+          </div>
+          <div class="client-card-footer">
+            <a href="https://www.instagram.com/hostievacationrentals/" target="_blank" class="client-ig">@hostievacationrentals</a>
+            <span class="client-follower-badge">9,028 followers</span>
+          </div>
+        </div>
+
+        <!-- Townsend -->
+        <div class="client-card">
+          <div class="client-card-header">
+            <div class="client-logo-circle" style="background:var(--brown-light);">T</div>
+            <div class="client-header-info">
+              <h4>Townsend</h4>
+              <div class="client-type">Western Lifestyle &amp; Retail · Round Top, TX</div>
+            </div>
+          </div>
+          <div class="client-card-body">
+            <p class="client-desc">A western lifestyle shop offering curated denim, vintage boots, clothing, and home goods in the heart of Round Top, TX. Their content consistently outperforms — and the numbers prove it.</p>
+            <div class="client-results">
+              <div class="client-result-row">
+                <span class="client-result-label">Monthly Views</span>
+                <span class="client-result-value up">69,300</span>
+              </div>
+              <div class="client-result-row">
+                <span class="client-result-label">Interactions / mo</span>
+                <span class="client-result-value up">3,000</span>
+              </div>
+              <div class="client-result-row">
+                <span class="client-result-label">New Followers / mo</span>
+                <span class="client-result-value up">365</span>
+              </div>
+            </div>
+          </div>
+          <div class="client-card-footer">
+            <a href="https://www.instagram.com/townsendroundtop/" target="_blank" class="client-ig">@townsendroundtop</a>
+            <span class="client-follower-badge">9,568 followers</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
   <!-- SERVICES -->
   <section class="services" id="services">
