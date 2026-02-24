@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SMM Blueprint — The Social Butterfly</title>
+  <meta name="description" content="The Social Media Management Blueprint — a completely custom 40+ page social strategy built around your brand. $3,200 one-time investment." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --brown: #4a3020; --brown-mid: #6b4c35; --brown-light: #8f6a4e;
+      --gold: #c49a3c; --gold-light: #e2bb6a;
+      --cream: #faf7f2; --cream-dark: #f0e8db; --cream-deep: #e5d8c8;
+      --text: #1e130a; --text-mid: #4a3828; --text-muted: #7a6355;
+      --white: #ffffff; --radius: 12px; --radius-lg: 20px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(250,247,242,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--cream-deep); padding: 0 5%; display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .nav-logo { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.25rem; color: var(--brown); text-decoration: none; }
+    .nav-logo span { color: var(--gold); }
+    .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--text-mid); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--brown); font-weight: 600; }
+    .nav-cta { background: var(--brown); color: var(--white) !important; padding: 0.55rem 1.4rem; border-radius: 100px; font-weight: 600; }
+    .nav-cta:hover { background: var(--brown-mid) !important; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    section { padding: 5rem 5%; }
+    .section-eyebrow { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 900; color: var(--brown); line-height: 1.15; letter-spacing: -0.015em; margin-bottom: 1rem; }
+    .section-title em { font-style: italic; color: var(--gold); }
+    .btn-primary { background: var(--brown); color: var(--white); padding: 0.9rem 2rem; border-radius: 100px; font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: background 0.2s, transform 0.15s, box-shadow 0.2s; display: inline-flex; align-items: center; gap: 0.5rem; box-shadow: 0 4px 20px rgba(74,48,32,0.2); }
+    .btn-primary:hover { background: var(--brown-mid); transform: translateY(-2px); }
+    .btn-ghost { background: transparent; color: var(--white); padding: 0.9rem 2rem; border-radius: 100px; font-weight: 600; font-size: 0.95rem; text-decoration: none; border: 1.5px solid rgba(255,255,255,0.4); transition: all 0.2s; display: inline-flex; align-items: center; }
+    .btn-ghost:hover { background: rgba(255,255,255,0.1); }
+
+    /* HERO */
+    .bp-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 100px 5% 60px;
+      background: linear-gradient(135deg, var(--brown) 0%, #2c1a0e 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .bp-hero::before {
+      content: '';
+      position: absolute; top: -100px; right: -100px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(196,154,60,0.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .bp-hero::after {
+      content: '';
+      position: absolute; bottom: -80px; left: -80px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .bp-hero-inner {
+      position: relative; z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .bp-hero .section-eyebrow { color: var(--gold-light); }
+    .bp-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 4.5vw, 4rem); font-weight: 900; color: var(--white); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1.25rem; }
+    .bp-hero h1 em { font-style: italic; color: var(--gold-light); }
+    .bp-hero p { font-size: 1.1rem; color: rgba(255,255,255,0.75); line-height: 1.75; margin-bottom: 2rem; max-width: 500px; }
+    .bp-hero-price { margin-bottom: 2rem; }
+    .bp-price-tag { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 900; color: var(--white); line-height: 1; }
+    .bp-price-label { font-size: 0.875rem; color: rgba(255,255,255,0.5); margin-top: 0.25rem; }
+    .bp-hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    /* Preview Card */
+    .bp-preview-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(196,154,60,0.25);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      backdrop-filter: blur(8px);
+    }
+    .bp-preview-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 1.25rem; }
+    .bp-preview-item {
+      display: flex; align-items: center; gap: 0.85rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.8);
+    }
+    .bp-preview-item:last-child { border-bottom: none; }
+    .bp-check { width: 20px; height: 20px; background: rgba(196,154,60,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.65rem; color: var(--gold-light); flex-shrink: 0; }
+
+    /* WHO IT'S FOR */
+    .for-who { background: var(--cream-dark); }
+    .for-who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; }
+    .for-card { background: var(--white); border-radius: var(--radius-lg); padding: 2rem; border: 1px solid var(--cream-deep); }
+    .for-card h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; color: var(--brown); margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--cream-deep); }
+    .for-list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+    .for-item { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.9rem; color: var(--text-mid); line-height: 1.55; }
+    .for-dot { width: 8px; height: 8px; background: var(--gold); border-radius: 50%; flex-shrink: 0; margin-top: 6px; }
+
+    /* DELIVERABLES */
+    .deliverables { background: var(--cream); }
+    .del-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 3rem; }
+    .del-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      border: 1px solid var(--cream-deep);
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    }
+    .del-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(74,48,32,0.08); border-color: var(--gold-light); }
+    .del-num { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 900; color: var(--cream-deep); line-height: 1; margin-bottom: 0.75rem; }
+    .del-card h3 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--brown); margin-bottom: 0.5rem; }
+    .del-card p { font-size: 0.825rem; color: var(--text-muted); line-height: 1.6; }
+
+    /* SCRIPTURE MOMENT */
+    .scripture-mid {
+      background: var(--cream-dark);
+      padding: 3rem 5%;
+      text-align: center;
+    }
+    .scripture-mid blockquote {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+      font-style: italic;
+      color: var(--brown);
+      line-height: 1.6;
+      max-width: 700px;
+      margin: 0 auto 0.75rem;
+    }
+    .scripture-mid cite { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); display: block; }
+
+    /* PROCESS */
+    .bp-process { background: var(--cream); }
+    .bp-process-steps { display: flex; flex-direction: column; gap: 1.5rem; max-width: 780px; margin: 3rem auto 0; }
+    .bp-step { display: flex; gap: 1.5rem; align-items: flex-start; }
+    .bp-step-num { width: 44px; height: 44px; background: var(--brown); color: var(--white); font-weight: 700; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.9rem; }
+    .bp-step-body h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--brown); margin-bottom: 0.35rem; }
+    .bp-step-body p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.65; }
+
+    /* CTA */
+    .bp-cta {
+      background: var(--cream-dark);
+      text-align: center;
+    }
+    .bp-cta h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 900; color: var(--brown); margin-bottom: 1rem; }
+    .bp-cta h2 em { font-style: italic; color: var(--gold); }
+    .bp-cta p { font-size: 1.05rem; color: var(--text-mid); line-height: 1.7; max-width: 520px; margin: 0 auto 2rem; }
+    .bp-cta-price { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 900; color: var(--brown); margin-bottom: 0.5rem; }
+    .bp-cta-price-note { font-size: 0.875rem; color: var(--text-muted); margin-bottom: 2rem; }
+
+    /* FOOTER */
+    footer { background: var(--text); color: rgba(255,255,255,0.7); padding: 3rem 5%; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
+    .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 900; color: var(--white); margin-bottom: 0.5rem; }
+    .footer-logo span { color: var(--gold); }
+    .footer-tagline { font-size: 0.85rem; color: rgba(255,255,255,0.5); }
+    .footer-links { display: flex; gap: 1.5rem; justify-content: flex-end; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.875rem; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold-light); }
+    .footer-bottom { max-width: 1200px; margin: 2rem auto 0; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.75rem; color: rgba(255,255,255,0.35); text-align: center; }
+
+    @media (max-width: 900px) {
+      .bp-hero-inner, .for-who-grid, .footer-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .del-grid { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 560px) {
+      .del-grid { grid-template-columns: 1fr; }
+      .footer-links { justify-content: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="index.html">The Social <span>Butterfly</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home &amp; Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blueprint.html" class="active">SMM Blueprint</a></li>
+      <li><a href="hire.html" class="nav-cta">Hire Us →</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="bp-hero">
+    <div class="bp-hero-inner">
+      <div>
+        <div class="section-eyebrow">✦ Signature Offer</div>
+        <h1>The Social Media<br>Management<br><em>Blueprint.</em></h1>
+        <p>Not a template. Not a generic PDF. A completely custom 40+ page strategy built entirely around your brand — so your socials stop being a guessing game.</p>
+        <div class="bp-hero-price">
+          <div class="bp-price-tag">$3,200</div>
+          <div class="bp-price-label">One-time investment · Everything included</div>
+        </div>
+        <div class="bp-hero-actions">
+          <a href="hire.html" class="btn-primary">Apply for the Blueprint →</a>
+          <a href="#deliverables" class="btn-ghost">See What's Included</a>
+        </div>
+      </div>
+      <div class="bp-preview-card">
+        <div class="bp-preview-label">What You'll Walk Away With</div>
+        <div class="bp-preview-item"><span class="bp-check">✓</span>40+ page custom strategy guide</div>
+        <div class="bp-preview-item"><span class="bp-check">✓</span>10 branded feed post templates</div>
+        <div class="bp-preview-item"><span class="bp-check">✓</span>10 branded story templates</div>
+        <div class="bp-preview-item"><span class="bp-check">✓</span>30-day tailored content calendar</div>
+        <div class="bp-preview-item"><span class="bp-check">✓</span>15 days of story prompts</div>
+        <div class="bp-preview-item"><span class="bp-check">✓</span>Competitor &amp; audience analysis</div>
+        <div class="bp-preview-item"><span class="bp-check">✓</span>Launch plan for new products/brands</div>
+        <div class="bp-preview-item"><span class="bp-check">✓</span>1 month of 1:1 support with Maddie</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section class="for-who">
+    <div class="container">
+      <div class="section-eyebrow">Is This For You?</div>
+      <h2 class="section-title">The Blueprint is built for brands<br><em>ready to stop guessing.</em></h2>
+      <div class="for-who-grid">
+        <div class="for-card">
+          <h3>✅ This is for you if…</h3>
+          <ul class="for-list">
+            <li class="for-item"><span class="for-dot"></span>You can handle your own socials but have mostly been winging it</li>
+            <li class="for-item"><span class="for-dot"></span>Someone on your team runs socials but you want them creating strategic, results-driven content</li>
+            <li class="for-item"><span class="for-dot"></span>You want an outside expert perspective on your brand and social media</li>
+            <li class="for-item"><span class="for-dot"></span>You need clear direction and a solid strategy with actionable steps</li>
+            <li class="for-item"><span class="for-dot"></span>You want to translate your branding into a consistent, impactful online presence</li>
+            <li class="for-item"><span class="for-dot"></span>You're not ready for full-time social management but still want expert guidance</li>
+          </ul>
+        </div>
+        <div class="for-card">
+          <h3>💡 The Blueprint gives you…</h3>
+          <ul class="for-list">
+            <li class="for-item"><span class="for-dot"></span>A strategy so clear, anyone on your team can execute it</li>
+            <li class="for-item"><span class="for-dot"></span>Templates that look professional without needing a designer every time</li>
+            <li class="for-item"><span class="for-dot"></span>Content ideas that are already planned for you — no more staring at a blank screen</li>
+            <li class="for-item"><span class="for-dot"></span>Real analytics understanding so you can actually improve your results</li>
+            <li class="for-item"><span class="for-dot"></span>A direct line to Maddie for a full month — no guessing, just answers</li>
+            <li class="for-item"><span class="for-dot"></span>Confidence that your brand looks and sounds exactly right online</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCRIPTURE -->
+  <div class="scripture-mid">
+    <blockquote>"She is clothed with strength and dignity; she laughs without fear of the future."</blockquote>
+    <cite>Proverbs 31:25</cite>
+  </div>
+
+  <!-- DELIVERABLES -->
+  <section class="deliverables" id="deliverables">
+    <div class="container">
+      <div class="section-eyebrow">Everything Included</div>
+      <h2 class="section-title">Every detail.<br><em>No surprises.</em></h2>
+      <div class="del-grid">
+        <div class="del-card">
+          <div class="del-num">01</div>
+          <h3>Custom Social Media Strategy</h3>
+          <p>40+ page guide covering brand identity, tone of voice, competitor analysis, SMART goals, platform recommendations, hashtag &amp; keyword strategy, target audience breakdown, content pillars, post ideas, and customer journey mapping.</p>
+        </div>
+        <div class="del-card">
+          <div class="del-num">02</div>
+          <h3>Visual Feed Styling</h3>
+          <p>Exactly how your socials should look and feel — showing your brand identity through your feed in a way your audience will immediately recognize and connect with.</p>
+        </div>
+        <div class="del-card">
+          <div class="del-num">03</div>
+          <h3>10 Feed Post Templates</h3>
+          <p>Professionally designed, on-brand post templates your team can reuse every month — no Canva guesswork, no off-brand designs.</p>
+        </div>
+        <div class="del-card">
+          <div class="del-num">04</div>
+          <h3>10 Story Templates</h3>
+          <p>10 matching, branded story templates designed specifically for your audience — consistent, beautiful, and ready to use immediately.</p>
+        </div>
+        <div class="del-card">
+          <div class="del-num">05</div>
+          <h3>Analytics Guide</h3>
+          <p>A step-by-step guide to understanding your analytics and using them to actually improve your results — no more flying blind on metrics.</p>
+        </div>
+        <div class="del-card">
+          <div class="del-num">06</div>
+          <h3>30 Days of Content Ideas</h3>
+          <p>A full month of tailored content ideas for your feed, written around your specific brand, audience, and goals — so you're never staring at a blank screen again.</p>
+        </div>
+        <div class="del-card">
+          <div class="del-num">07</div>
+          <h3>15 Story Prompts</h3>
+          <p>15 days of creative story prompts designed specifically for your audience — built to drive engagement, connection, and real interactions.</p>
+        </div>
+        <div class="del-card">
+          <div class="del-num">08</div>
+          <h3>Product or Brand Launch Plan</h3>
+          <p>A complete launch plan for a new product, service, or brand rollout — so your big moments land with impact, not silence.</p>
+        </div>
+        <div class="del-card">
+          <div class="del-num">09</div>
+          <h3>Community Engagement Plan</h3>
+          <p>A targeted plan to grow and connect with your audience in a way that builds genuine community — not just follower numbers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="bp-process">
+    <div class="container">
+      <div class="section-eyebrow" style="text-align:center;">How It Works</div>
+      <h2 class="section-title" style="text-align:center;">From application to<br><em>launch-ready strategy.</em></h2>
+      <div class="bp-process-steps">
+        <div class="bp-step">
+          <div class="bp-step-num">1</div>
+          <div class="bp-step-body">
+            <h3>Apply &amp; Let's Connect</h3>
+            <p>Fill out the short application and tell us about your brand. We'll be in touch within 24 hours to schedule a discovery call and make sure the Blueprint is the right fit.</p>
+          </div>
+        </div>
+        <div class="bp-step">
+          <div class="bp-step-num">2</div>
+          <div class="bp-step-body">
+            <h3>Brand Deep-Dive</h3>
+            <p>Maddie dives into your brand — your competitors, your audience, your current content, your goals. Everything gets looked at before a single word of strategy is written.</p>
+          </div>
+        </div>
+        <div class="bp-step">
+          <div class="bp-step-num">3</div>
+          <div class="bp-step-body">
+            <h3>Blueprint Delivery</h3>
+            <p>You receive your full, custom Blueprint — 40+ pages of strategy, templates, content ideas, and everything included above. Delivered as a polished, professional document.</p>
+          </div>
+        </div>
+        <div class="bp-step">
+          <div class="bp-step-num">4</div>
+          <div class="bp-step-body">
+            <h3>30-Day 1:1 Support</h3>
+            <p>One full month of direct access to Maddie. Questions, feedback, implementation help — she's in your corner to make sure everything actually gets executed.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bp-cta">
+    <div class="container">
+      <h2>I'm handing you the<br><em>blueprint for your socials.</em></h2>
+      <p>One investment. A complete strategy. No more guessing. No more wasted content. Just a clear path forward — built entirely around your brand.</p>
+      <div class="bp-cta-price">$3,200</div>
+      <div class="bp-cta-price-note">One-time investment · All 9 deliverables included · 30 days of 1:1 support</div>
+      <a href="hire.html?service=blueprint" class="btn-primary" style="display:inline-flex; justify-content:center;">Apply for the Blueprint →</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">The Social <span>Butterfly</span></div>
+        <p class="footer-tagline">Custom Digital Marketing That Actually Works · College Station, TX</p>
+      </div>
+      <nav class="footer-links">
+        <a href="index.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="blueprint.html">Blueprint</a>
+        <a href="hire.html">Hire Us</a>
+        <a href="https://www.instagram.com/tsb.marketing/" target="_blank">Instagram</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">© 2025 TSB Social Media Agency LLC · The Social Butterfly · All rights reserved</div>
+  </footer>
+
+</body>
+</html>

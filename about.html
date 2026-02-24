@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — The Social Butterfly</title>
+  <meta name="description" content="Meet Maddie Klein and the TSB team. A faith-driven marketing agency built for brands that are serious about growing." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --brown:       #4a3020;
+      --brown-mid:   #6b4c35;
+      --brown-light: #8f6a4e;
+      --gold:        #c49a3c;
+      --gold-light:  #e2bb6a;
+      --cream:       #faf7f2;
+      --cream-dark:  #f0e8db;
+      --cream-deep:  #e5d8c8;
+      --text:        #1e130a;
+      --text-mid:    #4a3828;
+      --text-muted:  #7a6355;
+      --white:       #ffffff;
+      --radius:      12px;
+      --radius-lg:   20px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(250,247,242,0.92); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--cream-deep);
+      padding: 0 5%; display: flex; align-items: center; justify-content: space-between; height: 68px;
+    }
+    .nav-logo { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.25rem; color: var(--brown); text-decoration: none; }
+    .nav-logo span { color: var(--gold); }
+    .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--text-mid); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--brown); font-weight: 600; }
+    .nav-cta { background: var(--brown); color: var(--white) !important; padding: 0.55rem 1.4rem; border-radius: 100px; font-weight: 600; transition: background 0.2s !important; }
+    .nav-cta:hover { background: var(--brown-mid) !important; }
+
+    /* SHARED */
+    .container { max-width: 1200px; margin: 0 auto; }
+    section { padding: 5rem 5%; }
+    .section-eyebrow { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 900; color: var(--brown); line-height: 1.15; letter-spacing: -0.015em; margin-bottom: 1rem; }
+    .section-title em { font-style: italic; color: var(--gold); }
+    .btn-primary { background: var(--brown); color: var(--white); padding: 0.9rem 2rem; border-radius: 100px; font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: background 0.2s, transform 0.15s, box-shadow 0.2s; display: inline-flex; align-items: center; gap: 0.5rem; box-shadow: 0 4px 20px rgba(74,48,32,0.2); }
+    .btn-primary:hover { background: var(--brown-mid); transform: translateY(-2px); }
+
+    /* PAGE HERO */
+    .page-hero {
+      padding: 140px 5% 70px;
+      background:
+        radial-gradient(ellipse 80% 60% at 90% 30%, rgba(196,154,60,0.1) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 10% 80%, rgba(74,48,32,0.06) 0%, transparent 60%),
+        var(--cream);
+      text-align: center;
+    }
+    .page-hero .section-eyebrow { margin-bottom: 1rem; }
+    .page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.8rem, 5vw, 4.5rem); font-weight: 900; color: var(--brown); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1.5rem; }
+    .page-hero h1 em { font-style: italic; color: var(--gold); }
+    .page-hero p { font-size: 1.125rem; color: var(--text-mid); line-height: 1.7; max-width: 580px; margin: 0 auto; }
+
+    /* SCRIPTURE BANNER */
+    .scripture-banner {
+      background: var(--brown);
+      padding: 2.5rem 5%;
+      text-align: center;
+    }
+    .scripture-text {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.1rem, 2vw, 1.5rem);
+      font-style: italic;
+      font-weight: 400;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.6;
+      max-width: 700px;
+      margin: 0 auto 0.5rem;
+    }
+    .scripture-ref {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--gold-light);
+      text-transform: uppercase;
+    }
+
+    /* ORIGIN STORY */
+    .origin { background: var(--cream); }
+    .origin-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .origin-visual {
+      background: var(--cream-dark);
+      border-radius: var(--radius-lg);
+      padding: 3rem;
+      border: 1px solid var(--cream-deep);
+      text-align: center;
+      position: relative;
+    }
+    .origin-emoji { font-size: 5rem; margin-bottom: 1.5rem; display: block; }
+    .origin-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--brown);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    .origin-quote-attr {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .origin-text { display: flex; flex-direction: column; gap: 1.25rem; }
+    .origin-text p { font-size: 1rem; color: var(--text-mid); line-height: 1.75; }
+    .origin-text p strong { color: var(--brown); }
+
+    /* VALUES */
+    .values { background: var(--cream-dark); }
+    .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3.5rem; }
+    .value-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      border: 1px solid var(--cream-deep);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .value-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(74,48,32,0.08); }
+    .value-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+    .value-card h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; color: var(--brown); margin-bottom: 0.6rem; }
+    .value-card p { font-size: 0.875rem; color: var(--text-mid); line-height: 1.65; }
+
+    /* TEAM */
+    .team { background: var(--cream); }
+    .team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3.5rem; }
+    .team-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--cream-deep);
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .team-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(74,48,32,0.1); }
+    .team-card-banner {
+      height: 8px;
+      background: linear-gradient(90deg, var(--gold), var(--brown));
+    }
+    .team-card-body { padding: 2.5rem; }
+    .team-avatar-row { display: flex; align-items: center; gap: 1.25rem; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--cream-deep); }
+    .team-avatar { width: 76px; height: 76px; border-radius: 50%; background: var(--cream-dark); display: flex; align-items: center; justify-content: center; font-size: 2.2rem; flex-shrink: 0; border: 3px solid var(--cream-deep); }
+    .team-name { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--brown); }
+    .team-role { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-top: 0.2rem; }
+    .team-school { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem; }
+    .team-bio-section { display: flex; flex-direction: column; gap: 1rem; }
+    .team-bio-section p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.75; }
+    .team-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
+    .team-tag { font-size: 0.72rem; font-weight: 600; padding: 0.3rem 0.75rem; border-radius: 100px; background: var(--cream); color: var(--text-mid); border: 1px solid var(--cream-deep); }
+
+    /* FAITH SECTION */
+    .faith {
+      background: linear-gradient(135deg, var(--brown) 0%, #2c1a0e 100%);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .faith::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(196,154,60,0.15) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .faith-inner { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
+    .faith-icon { font-size: 2.5rem; margin-bottom: 1.5rem; display: block; }
+    .faith h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 900; color: var(--white); line-height: 1.2; margin-bottom: 1.25rem; }
+    .faith h2 em { font-style: italic; color: var(--gold-light); }
+    .faith p { font-size: 1.05rem; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 1.25rem; }
+    .faith-verse {
+      margin-top: 2rem;
+      padding: 1.5rem 2rem;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(196,154,60,0.25);
+      border-radius: var(--radius-lg);
+      display: inline-block;
+      text-align: left;
+    }
+    .faith-verse p { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-style: italic; color: rgba(255,255,255,0.9); line-height: 1.7; margin: 0 0 0.5rem; }
+    .faith-verse span { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-light); }
+
+    /* CTA */
+    .about-cta { background: var(--cream-dark); text-align: center; }
+    .about-cta h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 900; color: var(--brown); margin-bottom: 1rem; }
+    .about-cta h2 em { font-style: italic; color: var(--gold); }
+    .about-cta p { font-size: 1.05rem; color: var(--text-mid); line-height: 1.7; max-width: 500px; margin: 0 auto 2rem; }
+
+    /* FOOTER */
+    footer { background: var(--text); color: rgba(255,255,255,0.7); padding: 3rem 5%; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
+    .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 900; color: var(--white); margin-bottom: 0.5rem; }
+    .footer-logo span { color: var(--gold); }
+    .footer-tagline { font-size: 0.85rem; color: rgba(255,255,255,0.5); }
+    .footer-links { display: flex; gap: 1.5rem; justify-content: flex-end; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.875rem; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold-light); }
+    .footer-bottom { max-width: 1200px; margin: 2rem auto 0; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.75rem; color: rgba(255,255,255,0.35); text-align: center; }
+
+    @media (max-width: 900px) {
+      .origin-inner, .team-grid, .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .values-grid { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 560px) {
+      .values-grid { grid-template-columns: 1fr; }
+      .footer-links { justify-content: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="index.html">The Social <span>Butterfly</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home &amp; Services</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="blueprint.html">SMM Blueprint</a></li>
+      <li><a href="hire.html" class="nav-cta">Hire Us →</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="section-eyebrow">Our Story</div>
+    <h1>Built from<br><em>uncertainty.</em><br>Grown with purpose.</h1>
+    <p>We're not your average marketing agency. We're a faith-driven, results-obsessed team that genuinely cares about your brand — and proves it every single month.</p>
+  </div>
+
+  <!-- SCRIPTURE BANNER -->
+  <div class="scripture-banner">
+    <p class="scripture-text">"Commit your work to the Lord, and your plans will be established."</p>
+    <span class="scripture-ref">Proverbs 16:3</span>
+  </div>
+
+  <!-- ORIGIN STORY -->
+  <section class="origin">
+    <div class="container">
+      <div class="origin-inner">
+        <div class="origin-visual">
+          <span class="origin-emoji">🦋</span>
+          <p class="origin-quote">"I took everything I love — content creation, design, branding, and storytelling — and built a business around it."</p>
+          <span class="origin-quote-attr">— Maddie Klein, Founder</span>
+        </div>
+        <div class="origin-text">
+          <div class="section-eyebrow">How It Started</div>
+          <h2 class="section-title">Not a plan.<br><em>A phone call.</em></h2>
+          <p>It started on a phone call with her dad, driving to one of her last classes at Texas A&M. Stress rashes, tears, and no idea what came next — except one thing: she wanted to work for a company that truly cared about its people.</p>
+          <p>So she employed herself. She took a Communication degree, a passion for digital marketing, and a deep belief that <strong>good work done with purpose actually changes things</strong> — and built The Social Butterfly from the ground up.</p>
+          <p>Today, TSB helps brands across Texas grow online with confidence and clarity. The agency was born out of uncertainty, but it's grown into something that gives both Maddie and her clients <strong>real purpose and real results.</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="values">
+    <div class="container">
+      <div class="section-eyebrow">What We Stand For</div>
+      <h2 class="section-title">More than pretty posts.<br><em>We're here to make you money.</em></h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <span class="value-icon">💛</span>
+          <h3>Purpose Over Vanity</h3>
+          <p>We're not here for vanity likes and empty followers. Every piece of content we create has one goal: to attract the right people, boost your visibility, and grow your bottom line.</p>
+        </div>
+        <div class="value-card">
+          <span class="value-icon">🤝</span>
+          <h3>Your Business Is Ours</h3>
+          <p>We treat every client like a long-term partner, not a contract. We care deeply about the people we work for, and genuinely want to see their businesses win.</p>
+        </div>
+        <div class="value-card">
+          <span class="value-icon">✨</span>
+          <h3>Done Right, Not Fast</h3>
+          <p>We're big believers in doing things the right way — not the rushed way. Quality strategy, intentional content, and consistent execution are the foundation of everything we do.</p>
+        </div>
+        <div class="value-card">
+          <span class="value-icon">📐</span>
+          <h3>Strategy First</h3>
+          <p>Bold creativity is nothing without a clear plan. Every campaign, every post, and every client relationship is backed by real strategy and measurable goals.</p>
+        </div>
+        <div class="value-card">
+          <span class="value-icon">🌱</span>
+          <h3>Intentional Growth</h3>
+          <p>We don't just want you to grow — we want you to grow the right way. Sustainable, intentional, and built on a brand your audience actually connects with.</p>
+        </div>
+        <div class="value-card">
+          <span class="value-icon">✝️</span>
+          <h3>Faith as the Foundation</h3>
+          <p>Faith in Jesus is the foundation of everything we do here — personally and professionally. Without it, there wouldn't be a business at all. We lead with integrity, always.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="team">
+    <div class="container">
+      <div class="section-eyebrow">The Team</div>
+      <h2 class="section-title">Small but <em>mighty.</em></h2>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-card-banner"></div>
+          <div class="team-card-body">
+            <div class="team-avatar-row">
+              <div class="team-avatar">🦋</div>
+              <div>
+                <div class="team-name">Maddie Klein</div>
+                <div class="team-role">Founder &amp; Creative Director</div>
+                <div class="team-school">Texas A&M · Communication &amp; Digital Marketing</div>
+              </div>
+            </div>
+            <div class="team-bio-section">
+              <p>Type-A creative who thrives on a good plan and a clean layout. Graduated from Texas A&M with a degree in Communication and a focus in digital marketing — which means she's always been drawn to how people connect and how brands can stand out without trying too hard.</p>
+              <p>Outside of work, you'll find her with Honey (her very cute golden retriever), grabbing coffee, working out, or calling her best friend — aka her mom — for the fifth time that day. Balance really matters to her. She believes in working hard, resting well, and not taking the good stuff for granted.</p>
+              <p><em>"My faith in Jesus is the foundation of everything I do — personally and professionally."</em></p>
+            </div>
+            <div class="team-tags">
+              <span class="team-tag">Strategy</span>
+              <span class="team-tag">Brand Direction</span>
+              <span class="team-tag">Content Creation</span>
+              <span class="team-tag">Copywriting</span>
+              <span class="team-tag">Faith-Driven</span>
+            </div>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-card-banner" style="background: linear-gradient(90deg, var(--gold-light), var(--gold));"></div>
+          <div class="team-card-body">
+            <div class="team-avatar-row">
+              <div class="team-avatar">✨</div>
+              <div>
+                <div class="team-name">Kaylee</div>
+                <div class="team-role">Social Media Manager</div>
+                <div class="team-school">Texas A&M · Communication + Social Media Minor</div>
+              </div>
+            </div>
+            <div class="team-bio-section">
+              <p>TSB's first official hire — and she's been a cornerstone ever since. Three years of hands-on experience paired with a Communication degree and Social Media minor make her the perfect combo of creative and strategic. From content planning to caption writing, she keeps clients polished, consistent, and growing.</p>
+              <p>Born and raised in Dallas, TX. Classic Type A who thrives on structure but knows how to keep things fun. She and Maddie met at Texas A&M studying communication — fun fact: Kaylee was actually the one who helped Maddie adopt Honey!</p>
+              <p>Dog mom to a golden doodle named Lucy. Loves Christmas (she's already in Hobby Lobby by September), hoodies, cold weather, and the mountains.</p>
+            </div>
+            <div class="team-tags">
+              <span class="team-tag">Social Media</span>
+              <span class="team-tag">Content Planning</span>
+              <span class="team-tag">Caption Writing</span>
+              <span class="team-tag">Branding</span>
+              <span class="team-tag">Design</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAITH -->
+  <section class="faith">
+    <div class="container">
+      <div class="faith-inner">
+        <span class="faith-icon">✝️</span>
+        <h2>Faith &amp; business<br><em>aren't separate here.</em></h2>
+        <p>We've been told before that faith and business shouldn't mix. But the truth is — without faith, there wouldn't be a business at all. Every client relationship, every piece of content, and every strategy is built on a foundation of integrity, purpose, and genuine care for people.</p>
+        <p>That's not a tagline. It's just who we are.</p>
+        <div class="faith-verse">
+          <p>"Whatever you do, work at it with all your heart, as working for the Lord, not for human masters."</p>
+          <span>Colossians 3:23</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="about-cta">
+    <div class="container">
+      <h2>Ready to work with a team<br>that <em>actually cares?</em></h2>
+      <p>We only take on clients we know we can truly help. Let's find out if we're the right fit for your brand.</p>
+      <a href="hire.html" class="btn-primary">Apply to Work With Us →</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">The Social <span>Butterfly</span></div>
+        <p class="footer-tagline">Custom Digital Marketing That Actually Works · College Station, TX</p>
+      </div>
+      <nav class="footer-links">
+        <a href="index.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="blueprint.html">Blueprint</a>
+        <a href="hire.html">Hire Us</a>
+        <a href="https://www.instagram.com/tsb.marketing/" target="_blank">Instagram</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">© 2025 TSB Social Media Agency LLC · The Social Butterfly · All rights reserved</div>
+  </footer>
+
+</body>
+</html>

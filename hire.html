@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hire Us — The Social Butterfly</title>
+  <meta name="description" content="Apply to work with The Social Butterfly. Fill out the short form and we'll be in touch within 24 hours." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --brown: #4a3020; --brown-mid: #6b4c35; --brown-light: #8f6a4e;
+      --gold: #c49a3c; --gold-light: #e2bb6a;
+      --cream: #faf7f2; --cream-dark: #f0e8db; --cream-deep: #e5d8c8;
+      --text: #1e130a; --text-mid: #4a3828; --text-muted: #7a6355;
+      --white: #ffffff; --radius: 12px; --radius-lg: 20px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(250,247,242,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--cream-deep); padding: 0 5%; display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .nav-logo { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.25rem; color: var(--brown); text-decoration: none; }
+    .nav-logo span { color: var(--gold); }
+    .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--text-mid); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--brown); font-weight: 600; }
+    .nav-cta { background: var(--brown); color: var(--white) !important; padding: 0.55rem 1.4rem; border-radius: 100px; font-weight: 600; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .section-eyebrow { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 900; color: var(--brown); line-height: 1.15; letter-spacing: -0.015em; margin-bottom: 1rem; }
+    .section-title em { font-style: italic; color: var(--gold); }
+
+    /* PAGE HERO */
+    .hire-hero {
+      padding: 130px 5% 60px;
+      background:
+        radial-gradient(ellipse 80% 60% at 90% 20%, rgba(196,154,60,0.1) 0%, transparent 60%),
+        var(--cream);
+      text-align: center;
+    }
+    .hire-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.8rem, 5vw, 4.5rem); font-weight: 900; color: var(--brown); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1.25rem; }
+    .hire-hero h1 em { font-style: italic; color: var(--gold); }
+    .hire-hero p { font-size: 1.1rem; color: var(--text-mid); line-height: 1.75; max-width: 540px; margin: 0 auto; }
+
+    /* MAIN LAYOUT */
+    .hire-main { padding: 4rem 5% 6rem; }
+    .hire-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; align-items: start; }
+
+    /* FORM */
+    .hire-form-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--cream-deep);
+      overflow: hidden;
+    }
+    .hire-form-header {
+      background: var(--brown);
+      padding: 2rem 2.5rem;
+    }
+    .hire-form-header h2 { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--white); margin-bottom: 0.35rem; }
+    .hire-form-header p { font-size: 0.875rem; color: rgba(255,255,255,0.7); }
+    .hire-form-body { padding: 2.5rem; }
+
+    .form-section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--cream-deep);
+    }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 0; }
+    .form-field { display: flex; flex-direction: column; gap: 0.45rem; margin-bottom: 1rem; }
+    .form-field label { font-size: 0.8rem; font-weight: 600; color: var(--text-mid); }
+    .form-field input, .form-field select, .form-field textarea {
+      font-family: 'Inter', sans-serif; font-size: 0.9rem; color: var(--text);
+      background: var(--cream); border: 1.5px solid var(--cream-deep);
+      border-radius: var(--radius); padding: 0.75rem 1rem; outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s; width: 100%;
+    }
+    .form-field input:focus, .form-field select:focus, .form-field textarea:focus {
+      border-color: var(--gold); box-shadow: 0 0 0 3px rgba(196,154,60,0.12);
+    }
+    .form-field textarea { min-height: 110px; resize: vertical; }
+
+    .form-divider { border: none; border-top: 1px solid var(--cream-deep); margin: 1.5rem 0; }
+
+    .checkbox-group { display: flex; flex-direction: column; gap: 0.6rem; }
+    .checkbox-item { display: flex; align-items: center; gap: 0.75rem; cursor: pointer; }
+    .checkbox-item input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--brown); cursor: pointer; flex-shrink: 0; }
+    .checkbox-item span { font-size: 0.875rem; color: var(--text-mid); }
+
+    .form-submit {
+      width: 100%;
+      background: var(--brown);
+      color: var(--white);
+      border: none;
+      padding: 1.05rem 2rem;
+      border-radius: 100px;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      margin-top: 0.75rem;
+      letter-spacing: 0.01em;
+    }
+    .form-submit:hover { background: var(--brown-mid); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(74,48,32,0.3); }
+    .form-note { text-align: center; font-size: 0.75rem; color: var(--text-muted); margin-top: 0.75rem; line-height: 1.5; }
+
+    /* SIDEBAR */
+    .hire-sidebar { display: flex; flex-direction: column; gap: 1.25rem; }
+
+    .sidebar-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      border: 1px solid var(--cream-deep);
+    }
+
+    .sidebar-card h3 { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; color: var(--brown); margin-bottom: 1rem; }
+
+    .sidebar-step-list { display: flex; flex-direction: column; gap: 0.85rem; }
+    .sidebar-step { display: flex; gap: 0.85rem; align-items: flex-start; }
+    .sidebar-step-num { width: 26px; height: 26px; background: var(--brown); color: var(--white); font-weight: 700; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; flex-shrink: 0; margin-top: 1px; }
+    .sidebar-step p { font-size: 0.85rem; color: var(--text-mid); line-height: 1.55; }
+    .sidebar-step p strong { color: var(--brown); }
+
+    .sidebar-service-list { display: flex; flex-direction: column; gap: 0.5rem; }
+    .sidebar-service { display: flex; align-items: center; justify-content: space-between; padding: 0.6rem 0.85rem; background: var(--cream); border-radius: 8px; border: 1px solid var(--cream-deep); }
+    .sidebar-service span:first-child { font-size: 0.825rem; color: var(--text-mid); }
+    .sidebar-service-price { font-size: 0.75rem; font-weight: 700; color: var(--gold); }
+
+    .sidebar-quote {
+      background: var(--brown);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      text-align: center;
+    }
+    .sidebar-quote-icon { font-size: 1.5rem; margin-bottom: 0.75rem; display: block; }
+    .sidebar-quote p { font-family: 'Playfair Display', serif; font-size: 1rem; font-style: italic; color: rgba(255,255,255,0.9); line-height: 1.6; margin-bottom: 0.5rem; }
+    .sidebar-quote cite { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold-light); }
+
+    /* SUCCESS STATE */
+    .success-state { display: none; text-align: center; padding: 4rem 2rem; }
+    .success-state .success-icon { font-size: 4rem; margin-bottom: 1.5rem; display: block; }
+    .success-state h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--brown); margin-bottom: 0.75rem; }
+    .success-state p { font-size: 1rem; color: var(--text-mid); line-height: 1.7; }
+
+    /* FOOTER */
+    footer { background: var(--text); color: rgba(255,255,255,0.7); padding: 3rem 5%; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
+    .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 900; color: var(--white); margin-bottom: 0.5rem; }
+    .footer-logo span { color: var(--gold); }
+    .footer-tagline { font-size: 0.85rem; color: rgba(255,255,255,0.5); }
+    .footer-links { display: flex; gap: 1.5rem; justify-content: flex-end; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.875rem; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold-light); }
+    .footer-bottom { max-width: 1200px; margin: 2rem auto 0; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.75rem; color: rgba(255,255,255,0.35); text-align: center; }
+
+    @media (max-width: 900px) {
+      .hire-grid { grid-template-columns: 1fr; }
+      .hire-sidebar { order: -1; }
+      .nav-links { display: none; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .footer-links { justify-content: flex-start; }
+    }
+    @media (max-width: 560px) {
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="index.html">The Social <span>Butterfly</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home &amp; Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blueprint.html">SMM Blueprint</a></li>
+      <li><a href="hire.html" class="active nav-cta">Hire Us →</a></li>
+    </ul>
+  </nav>
+
+  <div class="hire-hero">
+    <div class="section-eyebrow">Let's Work Together</div>
+    <h1>Tell us about<br>your <em>brand.</em></h1>
+    <p>Interested in working together? Fill out the form below and we'll be in touch within 24 hours — usually sooner. We can't wait to meet you.</p>
+  </div>
+
+  <section class="hire-main">
+    <div class="container">
+      <div class="hire-grid">
+
+        <!-- FORM -->
+        <div class="hire-form-card">
+          <div class="hire-form-header">
+            <h2>Work With Us Application</h2>
+            <p>Short form · Response within 24 hours · No obligation</p>
+          </div>
+          <div class="hire-form-body" id="formBody">
+            <form id="hireForm" onsubmit="handleSubmit(event)">
+
+              <div class="form-section-label">About You</div>
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="firstName">First Name *</label>
+                  <input type="text" id="firstName" placeholder="Jane" required />
+                </div>
+                <div class="form-field">
+                  <label for="lastName">Last Name *</label>
+                  <input type="text" id="lastName" placeholder="Smith" required />
+                </div>
+              </div>
+              <div class="form-field">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" placeholder="jane@yourbrand.com" required />
+              </div>
+              <div class="form-field">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="(555) 000-0000" />
+              </div>
+
+              <hr class="form-divider" />
+              <div class="form-section-label">About Your Brand</div>
+
+              <div class="form-field">
+                <label for="business">Business Name *</label>
+                <input type="text" id="business" placeholder="Your Brand Name" required />
+              </div>
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="industry">Industry</label>
+                  <select id="industry">
+                    <option value="" disabled selected>Select industry</option>
+                    <option>Boutique / Retail</option>
+                    <option>Restaurant / Food &amp; Bev</option>
+                    <option>Real Estate</option>
+                    <option>Beauty / Wellness</option>
+                    <option>Fitness / Health</option>
+                    <option>Vacation Rental / Hospitality</option>
+                    <option>Construction / Home Services</option>
+                    <option>E-Commerce</option>
+                    <option>Service Business</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label for="instagram">Instagram Handle</label>
+                  <input type="text" id="instagram" placeholder="@yourbrand" />
+                </div>
+              </div>
+              <div class="form-field">
+                <label for="website">Website (if you have one)</label>
+                <input type="url" id="website" placeholder="https://yourbrand.com" />
+              </div>
+
+              <hr class="form-divider" />
+              <div class="form-section-label">What You're Looking For</div>
+
+              <div class="form-field">
+                <label>Services I'm Interested In</label>
+                <div class="checkbox-group">
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="services" value="smm" id="svc-smm" />
+                    <span>📱 Social Media Management <em style="color:var(--text-muted)">— from $1,650/mo</em></span>
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="services" value="content" id="svc-content" />
+                    <span>📸 Content Creation &amp; Brand Photography</span>
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="services" value="web" id="svc-web" />
+                    <span>🌐 Web Design <em style="color:var(--text-muted)">— from $2,000</em></span>
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="services" value="ads" id="svc-ads" />
+                    <span>📣 Paid Ads <em style="color:var(--text-muted)">— from $600</em></span>
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="services" value="blueprint" id="svc-blueprint" />
+                    <span>✦ SMM Blueprint <em style="color:var(--text-muted)">— $3,200 one-time</em></span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label for="goals">Tell us about your goals &amp; current challenges</label>
+                <textarea id="goals" placeholder="What does your brand do? What are you hoping to achieve? What's been the biggest challenge with your marketing so far?"></textarea>
+              </div>
+
+              <div class="form-field">
+                <label for="timeline">When are you looking to get started?</label>
+                <select id="timeline">
+                  <option value="" disabled selected>Select a timeline</option>
+                  <option>ASAP — I'm ready to go</option>
+                  <option>Within the next month</option>
+                  <option>Within 1–3 months</option>
+                  <option>Just exploring for now</option>
+                </select>
+              </div>
+
+              <button type="submit" class="form-submit">Send My Application →</button>
+              <p class="form-note">We review every application personally. We only take on clients we know we can truly help — and we'll always be upfront with you about whether we're the right fit.</p>
+            </form>
+          </div>
+          <div class="success-state" id="successState">
+            <span class="success-icon">🦋</span>
+            <h3>Application received!</h3>
+            <p>We'll review your application and be in touch within 24 hours — usually much sooner. We're so excited to learn more about your brand.</p>
+          </div>
+        </div>
+
+        <!-- SIDEBAR -->
+        <div class="hire-sidebar">
+          <div class="sidebar-card">
+            <h3>How It Works</h3>
+            <div class="sidebar-step-list">
+              <div class="sidebar-step">
+                <div class="sidebar-step-num">1</div>
+                <p><strong>Fill out the form</strong> — it's short, we promise. Tell us about your brand and what you're looking for.</p>
+              </div>
+              <div class="sidebar-step">
+                <div class="sidebar-step-num">2</div>
+                <p><strong>We reach out</strong> within 24 hours to set up a free discovery call. No pressure, just a conversation.</p>
+              </div>
+              <div class="sidebar-step">
+                <div class="sidebar-step-num">3</div>
+                <p><strong>You receive a custom proposal</strong> with clear pricing and exactly what we'd handle for you.</p>
+              </div>
+              <div class="sidebar-step">
+                <div class="sidebar-step-num">4</div>
+                <p><strong>We get to work.</strong> Your brand. Your goals. Our strategy.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="sidebar-card">
+            <h3>Services &amp; Starting Prices</h3>
+            <div class="sidebar-service-list">
+              <div class="sidebar-service">
+                <span>Social Media Management</span>
+                <span class="sidebar-service-price">from $1,650/mo</span>
+              </div>
+              <div class="sidebar-service">
+                <span>Brand Photography</span>
+                <span class="sidebar-service-price">Custom</span>
+              </div>
+              <div class="sidebar-service">
+                <span>Web Design</span>
+                <span class="sidebar-service-price">from $2,000</span>
+              </div>
+              <div class="sidebar-service">
+                <span>Paid Ads</span>
+                <span class="sidebar-service-price">from $600</span>
+              </div>
+              <div class="sidebar-service">
+                <span>SMM Blueprint</span>
+                <span class="sidebar-service-price">$3,200 one-time</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="sidebar-quote">
+            <span class="sidebar-quote-icon">✝️</span>
+            <p>"Whatever you do, do it all for the glory of God."</p>
+            <cite>1 Corinthians 10:31</cite>
+          </div>
+
+          <div class="sidebar-card" style="text-align:center;">
+            <p style="font-size:0.875rem; color:var(--text-mid); line-height:1.65; margin-bottom:1rem;">Prefer to connect directly? Find us on Instagram — we'd love to chat.</p>
+            <a href="https://www.instagram.com/tsb.marketing/" target="_blank" style="font-size:0.875rem; font-weight:600; color:var(--brown); text-decoration:none;">@tsb.marketing →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">The Social <span>Butterfly</span></div>
+        <p class="footer-tagline">Custom Digital Marketing That Actually Works · College Station, TX</p>
+      </div>
+      <nav class="footer-links">
+        <a href="index.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="blueprint.html">Blueprint</a>
+        <a href="hire.html">Hire Us</a>
+        <a href="https://www.instagram.com/tsb.marketing/" target="_blank">Instagram</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">© 2025 TSB Social Media Agency LLC · The Social Butterfly · All rights reserved</div>
+  </footer>
+
+  <script>
+    // Pre-select service from URL param (e.g. hire.html?service=blueprint)
+    const params = new URLSearchParams(window.location.search);
+    const preService = params.get('service');
+    if (preService) {
+      const checkbox = document.getElementById('svc-' + preService);
+      if (checkbox) checkbox.checked = true;
+    }
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('.form-submit');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+      setTimeout(() => {
+        document.getElementById('formBody').style.display = 'none';
+        document.getElementById('successState').style.display = 'block';
+      }, 1200);
+    }
+  </script>
+
+</body>
+</html>
